@@ -4,6 +4,8 @@ exports.handler = async function (event, context) {
 		//statusCode: 200,
 		//body: "hello",
 		statusCode: 302,
-		Location: "https://www.google.com/",
+		headers: {
+		      Location: "https://www.google.com/"
+      		},
 	}
 }
