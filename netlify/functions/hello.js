@@ -29,14 +29,15 @@ exports.handler = async function (event, context) {
 
 /*
 	.then((response) => response.json())
-	.then((json) => {
+	.then((json) => { return {
 		statusCode: 200,
 		body: json,
+		}
 		//statusCode: 302,
 		//headers: {
 		//      Location: "https://www.google.com/"
       		//},
-	})*/
+	})
 
 	console.log("hello world 3")
 }
