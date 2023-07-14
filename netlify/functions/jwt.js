@@ -22,9 +22,9 @@ exports.handler = async function (event, context) {
 
 			var payload = {
 				'exp': Date.now() + 1000 * 60 * 60,
-				'user_id': userId,
+				'user_id': userId.toString(),
 				'role': 'external',
-				'channel_id': userId,
+				'channel_id': userId.toString(),
 				'pubsub_perms': {
 					send: [
 						'broadcast'
