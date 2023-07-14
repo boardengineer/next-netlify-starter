@@ -15,7 +15,7 @@ exports.handler = async function (event, context) {
 
 	var body = "client_id=" + client_id + "&client_secret=" + client_secret + "&code=" + code + "&grant_type=authorization_code&redirect_uri=http://localhost:31419"
 
-	return fetch(uri, {
+	/*return fetch(uri, {
 		method: "POST",
 		body: body,
 		headers: {
@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
 		//headers: {
 		//      Location: "https://www.google.com/"
       		//},
-	})
+	})*/
 
 	console.log("hello world 3")
 }
