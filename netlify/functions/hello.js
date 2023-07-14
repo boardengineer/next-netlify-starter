@@ -21,21 +21,9 @@ exports.handler = async function (event, context) {
 		headers: {
 			"Content-type": "application/json; charset=UTF-8"
 		}
-	}).then( (json) => { return "test"
-		}
-	)
-
-/*
-	.then((response) => response.json())
-	.then((json) => { return {
-		statusCode: 200,
-		body: json,
-		}
-		//statusCode: 302,
-		//headers: {
-		//      Location: "https://www.google.com/"
-      		//},
-	})
+	}).then((json) => {
+			return "test";
+		})
 
 	console.log("hello world 3")
 }
