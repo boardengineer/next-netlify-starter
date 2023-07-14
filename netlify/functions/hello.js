@@ -28,7 +28,7 @@ exports.handler = async function (event, context) {
 			console.log(JSON.stringify(json))
 
 			var redirectParams = Object.keys(json).map(function(k) {
-    				return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    				return encodeURIComponent(k) + '=' + encodeURIComponent(json[k])
 			}).join('&')
 
 			return {
