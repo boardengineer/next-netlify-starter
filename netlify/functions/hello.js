@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
 	console.log("hello world 1")
 
 	var code = event.queryStringParameters.code
-	var redirect_uri = "localhost:31419"
+	var redirect_uri = "http://localhost:31419"
 
 	console.log("hello world 2")
 
