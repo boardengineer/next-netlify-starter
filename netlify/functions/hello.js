@@ -1,15 +1,9 @@
 exports.handler = async function (event, context) {
-	console.log("hello world")
-
 	var client_id = process.env.CLIENT_ID
 	var client_secret = process.env.CLIENT_SECRET
 
-	console.log("hello world 1")
-
 	var code = event.queryStringParameters.code
 	var redirect_uri = "http://localhost:31419"
-
-	console.log("hello world 2")
 
 	var uri = "https://id.twitch.tv/oauth2/token"
 
@@ -37,13 +31,11 @@ exports.handler = async function (event, context) {
 			console.log(gameURI)
 
 			return {
-				statusCode: 302,
+				statusCode: 307,
 				headers: {
    					Location: redirect_uri + "?" + redirectParams
   				},
 				body: "Test Body",
 			};
 		})
-
-	console.log("hello world 3")
 }
