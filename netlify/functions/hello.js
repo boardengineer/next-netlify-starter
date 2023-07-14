@@ -1,8 +1,8 @@
 exports.handler = async function (event, context) {
 	console.log("hello world")
 
-	var client_id = processs.env.CLIENT_ID
-	var client_secret = processs.env.CLIENT_SECRET
+	var client_id = process.env.CLIENT_ID
+	var client_secret = process.env.CLIENT_SECRET
 
 	console.log("hello world 1")
 
