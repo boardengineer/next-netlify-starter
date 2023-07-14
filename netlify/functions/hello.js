@@ -23,7 +23,7 @@ exports.handler = async function (event, context) {
 		}
 	}).then((json) => {
 			console.log("we did it!")
-			console.log(SON.stringify(json))
+			console.log(JSON.stringify(json))
 
 			return {
 				statusCode: 200,
