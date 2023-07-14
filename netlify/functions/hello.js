@@ -18,17 +18,12 @@ exports.handler = async function (event, context) {
 	})
 	.then((response) => response.json())
 	.then((json) => {
-			console.log("we did it!")
-			console.log(JSON.stringify(json))
-
 			var redirectParams = Object.keys(json).map(function(k) {
     				return encodeURIComponent(k) + '=' + encodeURIComponent(json[k])
 			}).join('&')
 
 
 			var gameURI = redirect_uri + "?" + redirectParams
-
-			console.log(gameURI)
 
 			return {
 				statusCode: 307,
