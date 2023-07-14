@@ -31,6 +31,11 @@ exports.handler = async function (event, context) {
     				return encodeURIComponent(k) + '=' + encodeURIComponent(json[k])
 			}).join('&')
 
+
+			var gameURI = redirect_uri + "?" + redirectParams
+
+			console.log(gameURI)
+
 			return {
 				statusCode: 302,
 				headers: {
