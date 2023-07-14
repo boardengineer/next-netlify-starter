@@ -17,13 +17,11 @@ exports.handler = async function (event, context) {
 	.then((json) => {
 			var userId = json.user_id
 
-			console.log("userID " + userId)
-
 			const key = process.env.TWITCH_EXTENSION_SECRET
 			const secret = Buffer.from(key, 'base64')
 
 			var payload = {
-				'exp': Date.now() + 1000 * 60 * 60 * 24 * 30,
+				'exp': Date.now() + 1000 * 60 * 60,
 				'user_id': userId,
 				'role': 'external',
 				'channel_id': userId,
@@ -36,7 +34,6 @@ exports.handler = async function (event, context) {
 
 			var token = jwt.sign(payload, secret)
 
-			console.log(JSON.stringify(json))
 			return {
 				statusCode: 200,
 				body: token,
