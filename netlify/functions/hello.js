@@ -21,9 +21,10 @@ exports.handler = async function (event, context) {
 		headers: {
 			"Content-type": "application/json; charset=UTF-8"
 		}
-	}).then( (json) => {
-		statusCode: 200,
-		body: json,	
+	}).then( (json) => { return {
+			statusCode: 200,
+			body: json,
+			}	
 		}
 	)
 
