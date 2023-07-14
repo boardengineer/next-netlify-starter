@@ -22,6 +22,9 @@ exports.handler = async function (event, context) {
 			"Content-type": "application/json; charset=UTF-8"
 		}
 	}).then((json) => {
+			console.log("we did it!")
+			console.log(SON.stringify(json))
+
 			return {
 				statusCode: 200,
 				body: JSON.stringify(json)
