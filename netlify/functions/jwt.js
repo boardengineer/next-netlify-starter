@@ -1,3 +1,6 @@
+const { Buffer } = require('node:buffer');
+const jwt = require('jsonwebtoken');
+
 exports.handler = async function (event, context) {
 
 	var uri = "https://id.twitch.tv/oauth2/validate"
@@ -12,10 +15,31 @@ exports.handler = async function (event, context) {
 	})
 	.then((response) => response.json())
 	.then((json) => {
+			var userId = json.user_id
+
+			console.log("userID " + userId)
+
+			const key = process.env.TWITCH_EXTENSION_SECRET
+			const secret = Buffer.from(key, 'base64')
+
+			var payload = {
+				'exp': Date.now() + 1000 * 60 * 60 * 24 * 30,
+				'user_id': user_id,
+				'role': 'external',
+				'chanel_id': user_id,
+				'pubsub_perms': {
+					send: [
+						'broadcast'
+					]
+				}
+			} 
+
+			var token = jwt.sign(payload, secret)
+
 			console.log(JSON.stringify(json))
 			return {
 				statusCode: 200,
-				body: "Test Body",
+				body: token,
 			};
 		})
 }
