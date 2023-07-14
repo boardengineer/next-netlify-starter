@@ -21,7 +21,9 @@ exports.handler = async function (event, context) {
 		headers: {
 			"Content-type": "application/json; charset=UTF-8"
 		}
-	}).then((json) => {
+	})
+	.then((response) => response.json())
+	.then((json) => {
 			console.log("we did it!")
 			console.log(JSON.stringify(json))
 
