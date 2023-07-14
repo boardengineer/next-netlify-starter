@@ -15,13 +15,15 @@ exports.handler = async function (event, context) {
 
 	var body = "client_id=" + client_id + "&client_secret=" + client_secret + "&code=" + code + "&grant_type=authorization_code&redirect_uri=http://localhost:31419"
 
-	/*return fetch(uri, {
+	return fetch(uri, {
 		method: "POST",
 		body: body,
 		headers: {
 			"Content-type": "application/json; charset=UTF-8"
 		}
 	})
+
+/*
 	.then((response) => response.json())
 	.then((json) => {
 		statusCode: 200,
