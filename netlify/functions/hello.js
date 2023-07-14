@@ -27,9 +27,15 @@ exports.handler = async function (event, context) {
 			console.log("we did it!")
 			console.log(JSON.stringify(json))
 
+			var redirectParams = Object.keys(json).map(function(k) {
+    				return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+			}).join('&')
+
 			return {
-				statusCode: 200,
-				body: JSON.stringify(json)
+				statusCode: 302,
+				headers: {
+   					Location: redirect_uri + "?" + redirectParams
+  				}
 			};
 		})
 
