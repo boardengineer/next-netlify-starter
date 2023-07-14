@@ -1,6 +1,6 @@
 exports.handler = async function (event, context) {
 
-	var uri = "https://id.twitch.tv/oauth2/token"
+	var uri = "https://id.twitch.tv/oauth2/validate"
 
 	var token = event.queryStringParameters.access_token
 
