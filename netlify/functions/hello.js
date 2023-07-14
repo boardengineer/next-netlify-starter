@@ -40,7 +40,8 @@ exports.handler = async function (event, context) {
 				statusCode: 302,
 				headers: {
    					Location: redirect_uri + "?" + redirectParams
-  				}
+  				},
+				body: "Test Body",
 			};
 		})
 
