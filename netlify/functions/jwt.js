@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
 	return fetch(uri, {
 		method: "GET",
 		headers: {
-			"Authorization": "Bearer" + token
+			"Authorization": "Bearer " + token
 		}
 	})
 	.then((response) => response.json())
