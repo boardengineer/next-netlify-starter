@@ -4,8 +4,12 @@ exports.handler = async function (event, context) {
 	var client_id = processs.env.CLIENT_ID
 	var client_secret = processs.env.CLIENT_SECRET
 
+	console.log("hello world 1")
+
 	var code = event.queryStringParameters.code
 	var redirect_uri = "localhost:31419"
+
+	console.log("hello world 2")
 
 	var uri = "https://id.twitch.tv/oauth2/token"
 
@@ -27,4 +31,6 @@ exports.handler = async function (event, context) {
 		//      Location: "https://www.google.com/"
       		//},
 	})
+
+	console.log("hello world 3")
 }
