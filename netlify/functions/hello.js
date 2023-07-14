@@ -15,7 +15,7 @@ exports.handler = async function (event, context) {
 
 	var body = "client_id=" + client_id + "&client_secret=" + client_secret + "&code=" + code + "&grant_type=authorization_code&redirect_uri=http://localhost:31419"
 
-	return fetch(uri + ? + body, {
+	return fetch(uri + "?" + body, {
 		method: "POST",
 		body: body,
 		headers: {
