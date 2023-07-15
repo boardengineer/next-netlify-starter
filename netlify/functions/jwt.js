@@ -15,6 +15,13 @@ exports.handler = async function (event, context) {
 	})
 	.then((response) => response.json())
 	.then((json) => {
+			if(!("user_id" in json)) {
+				return {
+					statusCode: 401,
+					body: "Bad Auth Token",
+				};
+			}
+
 			var userId = json.user_id
 
 			const key = process.env.TWITCH_EXTENSION_SECRET
