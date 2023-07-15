@@ -33,10 +33,14 @@ exports.handler = async function (event, context) {
 			} 
 
 			var token = jwt.sign(payload, secret)
+			var resultDict = {
+				'token': token,
+				'channel_id': userId.toString()
+			}
 
 			return {
 				statusCode: 200,
-				body: token,
+				body: JSON.stringify(resultDict),
 			};
 		})
 }
